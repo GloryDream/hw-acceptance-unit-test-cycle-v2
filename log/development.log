@@ -1525,3 +1525,172 @@ Processing by MoviesController#index as HTML
   [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
   Rendered movies/index.html.haml within layouts/application (3.7ms)
 Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 165.91.12.159 at 2018-10-11 01:14:24 +0000
+
+
+Started GET "/movies" for 165.91.12.159 at 2018-10-11 01:14:24 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (16.3ms)
+Completed 200 OK in 204ms (Views: 177.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/movies/new" for 165.91.12.159 at 2018-10-11 01:14:32 +0000
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (8.1ms)
+Completed 200 OK in 15ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies" for 165.91.12.159 at 2018-10-11 01:14:52 +0000
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WDBRzfwfk8mpvEXEcN8Q4eRb8CHFLUZZegzokrBmMzKxQv9DQs5yXIB23Bj6CuxVPCfn4e+uEA2MpTWr2K9h7A==", "movie"=>{"title"=>"Inception", "rating"=>"PG", "release_date(1i)"=>"2014", "release_date(2i)"=>"10", "release_date(3i)"=>"11"}, "commit"=>"Save Changes"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Inception"], ["rating", "PG"], ["release_date", "2014-10-11 00:00:00.000000"], ["created_at", "2018-10-11 01:14:52.611145"], ["updated_at", "2018-10-11 01:14:52.611145"]]
+  [1m[35m (6.9ms)[0m  commit transaction
+Redirected to https://2c5c2e097ecb4fc9ac1386a87cd83981.vfs.cloud9.us-east-1.amazonaws.com/movies
+Completed 302 Found in 12ms (ActiveRecord: 7.2ms)
+
+
+Started GET "/movies" for 165.91.12.159 at 2018-10-11 01:14:52 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (3.7ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/11" for 165.91.12.159 at 2018-10-11 01:14:57 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered movies/show.html.haml within layouts/application (2.3ms)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/11/edit" for 165.91.12.159 at 2018-10-11 01:14:59 +0000
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered movies/edit.html.haml within layouts/application (3.7ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/movies/11" for 165.91.12.159 at 2018-10-11 01:15:13 +0000
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rV+RdNNLKnVkuYkmMaBHC2803ICDQbp0YyTciRIhFhVELT/6bZrL4E1zEPq7dbu/t0jLQKnC7CCVjQGweuhEyw==", "movie"=>{"title"=>"Inception", "rating"=>"PG", "release_date(1i)"=>"2014", "release_date(2i)"=>"10", "release_date(3i)"=>"11", "director"=>"Hans Zimmer"}, "commit"=>"Update Movie Info", "id"=>"11"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "movies" SET "director" = ?, "updated_at" = ? WHERE "movies"."id" = ?  [["director", "Hans Zimmer"], ["updated_at", "2018-10-11 01:15:13.405211"], ["id", 11]]
+  [1m[36m (5.0ms)[0m  [1mcommit transaction[0m
+Redirected to https://2c5c2e097ecb4fc9ac1386a87cd83981.vfs.cloud9.us-east-1.amazonaws.com/movies/11
+Completed 302 Found in 9ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/movies/11" for 165.91.12.159 at 2018-10-11 01:15:13 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered movies/show.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies" for 165.91.12.159 at 2018-10-11 01:17:17 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (3.7ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/new" for 165.91.12.159 at 2018-10-11 01:17:19 +0000
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (3.4ms)
+Completed 200 OK in 10ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies" for 165.91.12.159 at 2018-10-11 01:17:47 +0000
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c0PDe1+S0W4Uhl05CWJvM3QgHa6wE4YjNBmCTgcLDSWaMW314UMw+z1MxOWDt5OHrFwKbpqQ0HfCsF93b8Jf+w==", "movie"=>{"title"=>"Interstaller", "rating"=>"PG", "release_date(1i)"=>"2014", "release_date(2i)"=>"5", "release_date(3i)"=>"15", "director"=>"Hans Zimmer"}, "commit"=>"Save Changes"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "director", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Interstaller"], ["rating", "PG"], ["director", "Hans Zimmer"], ["release_date", "2014-05-15 00:00:00.000000"], ["created_at", "2018-10-11 01:17:47.543756"], ["updated_at", "2018-10-11 01:17:47.543756"]]
+  [1m[35m (6.3ms)[0m  commit transaction
+Redirected to https://2c5c2e097ecb4fc9ac1386a87cd83981.vfs.cloud9.us-east-1.amazonaws.com/movies
+Completed 302 Found in 10ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/movies" for 165.91.12.159 at 2018-10-11 01:17:47 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (3.7ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/11" for 165.91.12.159 at 2018-10-11 01:17:53 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered movies/show.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies/11/same_director" for 165.91.12.159 at 2018-10-11 01:17:56 +0000
+Processing by MoviesController#same_director as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."Director" = 'Hans Zimmer'
+  Rendered movies/same_director.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/11/same_director" for 165.91.12.159 at 2018-10-11 01:19:52 +0000
+Processing by MoviesController#same_director as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."Director" = 'Hans Zimmer'
+  Rendered movies/same_director.html.haml within layouts/application (3.1ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/11" for 165.91.12.159 at 2018-10-11 01:19:58 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered movies/show.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies/11/same_director" for 165.91.12.159 at 2018-10-11 01:20:01 +0000
+Processing by MoviesController#same_director as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."Director" = 'Hans Zimmer'[0m
+  Rendered movies/same_director.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/11" for 165.91.12.159 at 2018-10-11 01:20:12 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered movies/show.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies" for 165.91.12.159 at 2018-10-11 01:20:14 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (3.8ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/new" for 165.91.12.159 at 2018-10-11 01:20:32 +0000
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 9ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies" for 165.91.12.159 at 2018-10-11 01:20:42 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (3.9ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.3ms)
